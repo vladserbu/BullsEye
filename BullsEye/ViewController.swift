@@ -41,9 +41,16 @@ class ViewController: UIViewController {
         currentValue = lroundf(slider.value)
     }
 
+    @IBOutlet weak var targetLabel: UILabel!
+
     func startNewRound() {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        updateLabels()
+    }
+
+    func updateLabels() {
+        targetLabel.text = "\(targetValue)"
     }
 }
